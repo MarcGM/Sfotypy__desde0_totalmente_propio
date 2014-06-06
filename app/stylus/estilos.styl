@@ -2,6 +2,7 @@
 @import "fonts.styl"
 
 gris_claro = #D0D2D3
+gris_mas_claro = #F0F0F0
 gris_oscuro = #333333
 rojo = #CC2F6F
 
@@ -17,6 +18,9 @@ header
 img
 	vertical-align top
 figure
+	margin 0
+ul
+	padding 0
 	margin 0
 .actions
 	background rgba(black,.2)
@@ -175,13 +179,15 @@ figure
 
 @media screen and (min-width:1000px)
 	body
-		background #FFF
+		background gris_mas_claro
 	header
-		height 5em
+		background white
+		height auto
 		& .button_menu
 		& .titlePag
 			display none
 	.cabecera-desktop
+		height 3em
 		line-height 1rem
 		margin 0 auto
 		overflow hidden
@@ -192,7 +198,25 @@ figure
 		float left
 		width 122px
 	.menu
+		background gris_mas_claro
 		display block
+		line-height 1rem
+		overflow hidden
+		.item
+			float left
+			list-style none
+			padding 1em
+			a
+				color gris_oscuro
+				cursor pointer
+				text-transform uppercase
+		ul
+			margin 0 auto
+			width 1000px
+	.playing
+		/*&.large
+			margin 0 auto
+			width 20rem*/
 	.search
 		margin-right 2.2em
 		position relative
