@@ -4,11 +4,23 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>Sfotipy desde 0</title>
+	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 	<header>
-		<a href="#" class="button_menu">*</a>
+		<div class="cabecera-desktop">
+			<figure class="image">
+				<img src="img/logo.png" alt="">
+			</figure>
+			<div class="user">
+				@marcgm
+			</div>
+			<div class="search">
+				Search
+			</div>
+		</div>
+		<a href="#" class="button_menu icon-menu"></a>
 		<nav class="menu">
 			<ul>
 				<li class="item">Top hits</li>
@@ -21,10 +33,56 @@
 		</nav>
 		<p class="titlePag">Top hits</p>
 	</header>
+	<!-- 
+		El "section" de abajo pertenece a la página del reproductor.
+		Lo ponemos en el mismo archivo porque lo vamos a poner en la misma vista. (También se podría hacer diferente y poner en una página distinta.)
+	 -->
+	<section class="playing small medium">
+		<figure class="image">
+			<img src="img/test-playing.jpg" width="320" height="320" alt="Come Get It Bae - Pharell Williams">
+			<!--
+			En este "div" habrá los botones de "añadir a la lista de 		reproducción", "guardar en favoritos" y "compartir".
+			Lo ponemos dentro del "figure", porque están por encima de la 	imágen("img").
+			-->
+			<div class="actions">
+				<a href="" class="action icon-add"></a>
+				<a href="" class="action icon-love"></a>
+				<a href="" class="action icon-share"></a>
+			</div>
+		</figure>
+		<div class="progress_description_playing">
+			<div class="progress">
+				<span class="min">
+					0:45
+				</span>
+				<div class="total">
+					<div class="state">
+						<div class="circle">
+							
+						</div>
+					</div>
+				</div>
+				<span class="max">
+					4:10
+				</span>
+			</div>
+			<div class="description">
+				<p class="name">Come Get It Bae</p>
+				<p class="author">Pharell Williams</p>
+			</div>
+			<div class="actions-play">
+				<a href="" class="action icon-prev"></a>
+				<a href="" class="action icon-play"></a>
+				<a href="" class="action icon-next"></a>
+				<a href="" class="action icon-random"></a>
+				<a href="" class="action icon-vol"></a>
+			</div>
+		</div>
+	</section>
 	<section class="container">
 		<article class="song">
 			<figure class="caratula_album">
-				<img src="#" alt="">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
 			</figure>
 			<p class="name">
 				Girl
@@ -35,7 +93,7 @@
 		</article>
 		<article class="song">
 			<figure class="caratula_album">
-				<img src="#" alt="">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
 			</figure>
 			<p class="name">
 				Girl
@@ -46,7 +104,7 @@
 		</article>
 		<article class="song">
 			<figure class="caratula_album">
-				<img src="#" alt="">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
 			</figure>
 			<p class="name">
 				Girl
@@ -57,7 +115,7 @@
 		</article>
 		<article class="song">
 			<figure class="caratula_album">
-				<img src="#" alt="">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
 			</figure>
 			<p class="name">
 				Girl
@@ -68,7 +126,7 @@
 		</article>
 		<article class="song">
 			<figure class="caratula_album">
-				<img src="#" alt="">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
 			</figure>
 			<p class="name">
 				Girl
@@ -79,7 +137,73 @@
 		</article>
 		<article class="song">
 			<figure class="caratula_album">
-				<img src="#" alt="">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
+			</figure>
+			<p class="name">
+				Girl
+			</p>
+			<p class="author">
+				Pharell Williams
+			</p>
+		</article>
+		<article class="song">
+			<figure class="caratula_album">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
+			</figure>
+			<p class="name">
+				Girl
+			</p>
+			<p class="author">
+				Pharell Williams
+			</p>
+		</article>
+		<article class="song">
+			<figure class="caratula_album">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
+			</figure>
+			<p class="name">
+				Girl
+			</p>
+			<p class="author">
+				Pharell Williams
+			</p>
+		</article>
+		<article class="song">
+			<figure class="caratula_album">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
+			</figure>
+			<p class="name">
+				Girl
+			</p>
+			<p class="author">
+				Pharell Williams
+			</p>
+		</article>
+		<article class="song">
+			<figure class="caratula_album">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
+			</figure>
+			<p class="name">
+				Girl
+			</p>
+			<p class="author">
+				Pharell Williams
+			</p>
+		</article>
+		<article class="song">
+			<figure class="caratula_album">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
+			</figure>
+			<p class="name">
+				Girl
+			</p>
+			<p class="author">
+				Pharell Williams
+			</p>
+		</article>
+		<article class="song">
+			<figure class="caratula_album">
+				<img src="img/test.jpg" alt="Girl - Pharell Williams" height="128px" width="128px">
 			</figure>
 			<p class="name">
 				Girl

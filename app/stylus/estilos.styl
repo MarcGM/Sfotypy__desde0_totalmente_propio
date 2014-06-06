@@ -1,0 +1,175 @@
+@import "normalize.styl"
+@import "fonts.styl"
+
+gris_claro = #D0D2D3
+gris_oscuro = #333333
+rojo = #CC2F6F
+
+a
+	text-decoration none
+body
+	font-family 'Varela Round', sans-serif
+	font-size 16px
+header
+	border-bottom 1px gris_claro solid
+	height 3.6em
+	line-height 3.6em
+img
+	vertical-align top
+figure
+	margin 0
+.actions
+	background rgba(black,.2)
+	bottom 0
+	font-size 1.5rem
+	padding .85em 1em .3em 1em
+	position absolute
+	/*
+		Usamos "left 0" i "right 0" para que la caja se expanda. Lo que
+			hace eso, es ponerlo al margen "izquierdo", primero, y ponerlo
+			al margen derecho, después (por lo que al intentar ponerlo
+			aliniarlo a los dos laterales, la caja, se expande).
+	 */
+	left 0
+	right 0
+	text-align right
+	/*
+		El símbolo "&" hace referencia al elemento padre identado (en este caso ".actions").
+		Se puede utilizar en todos los casos.
+		Simplemente corresponde al contenido del elemento padre identado.
+	 */
+	& .action
+		color white
+		margin-right .2em
+		&:last-child
+			margin-right 0
+.actions-play
+	padding 1em 0
+	text-align center
+	& .action
+		color gris_oscuro
+		font-size 1rem
+		margin 1em
+.author
+	font-size 0.8rem
+	color #818181
+	margin 0
+.button_menu
+	color gris_oscuro
+	font-size 1.5rem
+	margin-left 1.4rem
+	position absolute
+	//En la línea siguiente, lo que hacemos es heredar el estilo de "line-height" del padre más cercano que tenga esa propiedad (en este caso, la clase "header").
+	line-height inherit
+.container
+	padding 1.4rem
+	text-align center
+.description
+	border-bottom 2px solid gris_claro
+	padding 0.5em 0 1em 0
+	text-align center
+	& .author
+		font-size 0.9rem
+		margin-top 0.3em
+	& .name
+		font-size 1.2rem
+.image
+	position relative
+.menu
+	display none
+.name
+	color gris_oscuro
+	margin 0
+.song
+	display inline-block
+	margin-bottom 1.2rem
+	margin-right 1rem
+	&:nth-child(even)
+		margin-right 0
+.titlePag
+	font-size 1.2rem
+	margin 0
+	text-align center
+.playing
+	&.small
+		margin 0 auto
+		width 20rem
+.progress
+	margin 1em 0
+	position relative
+	.min
+	.max
+		font-size .8rem
+		position absolute
+		top -5px
+	.min
+		left 0
+	.max
+		right 0
+	.total
+		background gris_claro
+		border-radius 5px
+		height 3px
+		margin 0 auto
+		width 75%
+	.state
+		background rojo
+		border-radius 5px
+		height 3px
+		position relative
+		width 30%
+		.circle
+			background gris_oscuro
+			border-radius 50%
+			height 10px
+			position absolute
+			right 0
+			top -3px
+			width 10px
+.progress_description_playing
+	padding 1em
+
+@media screen and (min-width:480px)
+	body
+		background #F3F3F3
+	.image
+		img
+			/*
+				Ponemos "width 100%" en vez de "width auto" porque si ponemos
+					"width auto", la imagen ocupará el tamaño original(640px),
+					en este caso.
+			 */
+			width 100%
+			/*
+				Podemos poner "height auto", porque el navegador ya hace calculos
+					para hacer el "height" automaticamente.
+			 */
+
+			height auto
+	.playing
+		&.medium
+			width auto
+	.song
+		margin-right 0.8rem
+		&:nth-child(even)
+			margin-right 0.8rem
+
+@media screen and (min-width:1000px)
+	header
+		height auto
+		& .button_menu
+		& .titlePag
+			display none
+	.cabecera-desktop
+		margin 0 auto
+		overflow hidden
+		padding 1em 0
+		width 1000px
+	.cabecera-desktop .image
+		display inline-block
+		float left
+		width 122px
+	.search
+	.user
+		display inline-block
+		float right
