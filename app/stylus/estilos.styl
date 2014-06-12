@@ -22,7 +22,7 @@ figure
 ul
 	padding 0
 	margin 0
-.actions
+.music .actions
 	background rgba(black,.2)
 	bottom 0
 	font-size 1.5rem
@@ -151,6 +151,16 @@ ul
 	left .5em
 	position absolute
 	top .9em
+//Estas propiedades, afectan a los elementos con la clase ".action" dentro de los elementos con la clase ".listSongs". Estos elementos són solamente visibles en la versión "Desktop".
+.listSongs
+	list-style none
+	& .action
+		color gris_claro
+	& .actions
+		float right
+	& .item
+		padding 1em 0
+		border-bottom 1px solid gris_claro
 
 @media screen and (min-width:480px)
 	body
@@ -205,18 +215,32 @@ ul
 		.item
 			float left
 			list-style none
-			padding 1em
 			a
+				border-top 5px solid transparent
 				color gris_oscuro
+				display block
 				cursor pointer
+				padding 1rem
 				text-transform uppercase
+				&:hover
+					border-top 5px solid gris_claro
 		ul
 			margin 0 auto
 			width 1000px
+	.music
+		float left
+		//width 23.4em
+		width 32.5em
 	.playing
-		/*&.large
+		&.large
 			margin 0 auto
-			width 20rem*/
+			overflow hidden
+			width 62.5em
+	.playlist
+		border-left 1px solid gris_claro
+		float right
+		padding 0 2em
+		width 22em
 	.search
 		margin-right 2.2em
 		position relative

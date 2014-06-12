@@ -53,45 +53,119 @@
 		Lo ponemos en el mismo archivo porque lo vamos a poner en la misma vista. (También se podría hacer diferente y poner en una página distinta.)
 	 -->
 	<section class="playing small medium large">
-		<figure class="image">
-			<img src="img/test-playing.jpg" width="320" height="320" alt="Come Get It Bae - Pharell Williams">
-			<!--
-			En este "div" habrá los botones de "añadir a la lista de 		reproducción", "guardar en favoritos" y "compartir".
-			Lo ponemos dentro del "figure", porque están por encima de la 	imágen("img").
-			-->
-			<div class="actions">
-				<a href="" class="action icon-add"></a>
-				<a href="" class="action icon-love"></a>
-				<a href="" class="action icon-share"></a>
-			</div>
-		</figure>
-		<div class="progress_description_playing">
-			<div class="progress">
-				<span class="min">
-					0:45
-				</span>
-				<div class="total">
-					<div class="state">
-						<div class="circle">
-							
+		<!--Este "div" pertenece a la parte de la canción actual en reproducción.-->
+		<div class="music">
+			<figure class="image">
+				<img src="img/test-playing.jpg" width="320" height="320" alt="Come Get It Bae - Pharell Williams">
+				<!--
+				En este "div" habrá los botones de "añadir a la lista de 		reproducción", "guardar en favoritos" y "compartir".
+				Lo ponemos dentro del "figure", porque están por encima de la 	imágen("img").
+				-->
+				<div class="actions">
+					<a href="" class="action icon-add"></a>
+					<a href="" class="action icon-love"></a>
+					<a href="" class="action icon-share"></a>
+				</div>
+			</figure>
+			<div class="progress_description_playing">
+				<div class="progress">
+					<span class="min">
+						0:45
+					</span>
+					<div class="total">
+						<div class="state">
+							<div class="circle">
+								
+							</div>
 						</div>
 					</div>
+					<span class="max">
+						4:10
+					</span>
 				</div>
-				<span class="max">
-					4:10
-				</span>
+				<div class="description">
+					<p class="name">Come Get It Bae</p>
+					<p class="author">Pharell Williams</p>
+				</div>
+				<div class="actions-play">
+					<a href="" class="action icon-prev"></a>
+					<a href="" class="action icon-play"></a>
+					<a href="" class="action icon-next"></a>
+					<a href="" class="action icon-random"></a>
+					<a href="" class="action icon-vol"></a>
+				</div>
 			</div>
-			<div class="description">
-				<p class="name">Come Get It Bae</p>
-				<p class="author">Pharell Williams</p>
-			</div>
-			<div class="actions-play">
-				<a href="" class="action icon-prev"></a>
-				<a href="" class="action icon-play"></a>
-				<a href="" class="action icon-next"></a>
-				<a href="" class="action icon-random"></a>
-				<a href="" class="action icon-vol"></a>
-			</div>
+		</div>
+		<!--Este "div", contendrá toda la lista de reproducción (que se mostrará a la derecha de la pantalla.-->
+		<div class="playlist">
+			<p class="name">
+				Girl
+			</p>
+			<p class="author">
+				Phrell Williams
+			</p>
+			<ul class="listSongs">
+				<li class="item">
+					<span>
+						Marilyn Monroe
+					</span>
+					<span class="actions">
+						<a href="" class="action icon-add"></a>
+						<a href="" class="action icon-love"></a>
+						<a href="" class="action icon-share"></a>
+					</span>
+				</li>
+				<li class="item">
+					<span>
+						Happy
+					</span>
+					<span class="actions">
+						<a href="" class="action icon-add"></a>
+						<a href="" class="action icon-love"></a>
+						<a href="" class="action icon-share"></a>
+					</span>
+				</li>
+				<li class="item">
+					<span>
+						Happy
+					</span>
+					<span class="actions">
+						<a href="" class="action icon-add"></a>
+						<a href="" class="action icon-love"></a>
+						<a href="" class="action icon-share"></a>
+					</span>
+				</li>
+				<li class="item">
+					<span>
+						Happy
+					</span>
+					<span class="actions">
+						<a href="" class="action icon-add"></a>
+						<a href="" class="action icon-love"></a>
+						<a href="" class="action icon-share"></a>
+					</span>
+				</li>
+				<li class="item">
+					<span>
+						Happy
+					</span>
+					<span class="actions">
+						<a href="" class="action icon-add"></a>
+						<a href="" class="action icon-love"></a>
+						<a href="" class="action icon-share"></a>
+					</span>
+				</li>
+				<li class="item">
+					<span>
+						Happy
+					</span>
+					<span class="actions">
+						<a href="" class="action icon-add"></a>
+						<a href="" class="action icon-love"></a>
+						<a href="" class="action icon-share"></a>
+					</span>
+				</li>
+			</ul>
 		</div>
 	</section>
 	<section class="container">
