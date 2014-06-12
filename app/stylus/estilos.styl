@@ -12,7 +12,7 @@ body
 	font-family 'Varela Round', sans-serif
 	font-size 16px
 header
-	border-bottom 1px gris_claro solid
+	//border-bottom 1px gris_claro solid
 	height 3.6em
 	line-height 3.6em
 img
@@ -22,6 +22,56 @@ figure
 ul
 	padding 0
 	margin 0
+.actions-play
+	padding 1em 0
+	text-align center
+	& .action
+		color gris_oscuro
+		font-size 1rem
+		margin 1em
+.author
+	font-size 0.8rem
+	color #818181
+	margin 0
+.button_menu
+	color gris_oscuro
+	font-size 1.5rem
+	margin-left 1.4rem
+	position absolute
+	//En la línea siguiente, lo que hacemos es heredar el estilo de "line-height" del padre más cercano que tenga esa propiedad (en este caso, la clase "header").
+	line-height inherit
+.cabecera-desktop
+	display none
+.container
+	padding 1.4rem
+	text-align center
+.close-icon
+	color gris_claro
+	font-weight bold
+	font-size 1.2em
+	position absolute
+	right .5em
+	top .7em
+.description
+	border-bottom 2px solid gris_claro
+	padding 0.5em 0 1em 0
+	text-align center
+	& .author
+		font-size 0.9rem
+		margin-top 0.3em
+	& .name
+		font-size 1.2rem
+.form-search
+	position relative
+.image
+	position relative
+.input
+	border 1px solid gris_claro
+	border-radius 5px
+	height 2.5em
+	padding 0 1em 0 2em
+.menu
+	display none
 .music .actions
 	background rgba(black,.2)
 	bottom 0
@@ -47,71 +97,15 @@ ul
 		margin-right .2em
 		&:last-child
 			margin-right 0
-.actions-play
-	padding 1em 0
-	text-align center
-	& .action
-		color gris_oscuro
-		font-size 1rem
-		margin 1em
-.author
-	font-size 0.8rem
-	color #818181
-	margin 0
-.button_menu
-	color gris_oscuro
-	font-size 1.5rem
-	margin-left 1.4rem
-	position absolute
-	//En la línea siguiente, lo que hacemos es heredar el estilo de "line-height" del padre más cercano que tenga esa propiedad (en este caso, la clase "header").
-	line-height inherit
-.container
-	padding 1.4rem
-	text-align center
-.close-icon
-	color gris_claro
-	font-weight bold
-	font-size 1.2em
-	position absolute
-	right .5em
-	top .7em
-.description
-	border-bottom 2px solid gris_claro
-	padding 0.5em 0 1em 0
-	text-align center
-	& .author
-		font-size 0.9rem
-		margin-top 0.3em
-	& .name
-		font-size 1.2rem
-.image
-	position relative
-.input
-	border 1px solid gris_claro
-	border-radius 5px
-	height 2.5em
-	padding 0 1em 0 2em
-.form-search
-	position relative
-.menu
-	display none
 .name
 	color gris_oscuro
 	margin 0
-.song
-	display inline-block
-	margin-bottom 1.2rem
-	margin-right 1rem
-	&:nth-child(even)
-		margin-right 0
-.titlePag
-	font-size 1.2rem
-	margin 0
-	text-align center
 .playing
 	&.small
 		margin 0 auto
 		width 20rem
+.playlist
+	display none
 .progress
 	margin 1em 0
 	position relative
@@ -134,8 +128,19 @@ ul
 		background rojo
 		border-radius 5px
 		height 3px
+//Estas propiedades, afectan a los elementos con la clase ".action" dentro de los elementos con la clase ".listSongs". Estos elementos són solamente visibles en la versión "Desktop".
+.listSongs
+	list-style none
+	& .action
+		color gris_claro
+	& .actions
+		float right
+	& .item
+		//color gris_claro
+		border-bottom 1px solid gris_claro
+		padding 1em 0
 		position relative
-		width 30%
+		width 100%
 		.circle
 			background gris_oscuro
 			border-radius 50%
@@ -151,20 +156,22 @@ ul
 	left .5em
 	position absolute
 	top .9em
-//Estas propiedades, afectan a los elementos con la clase ".action" dentro de los elementos con la clase ".listSongs". Estos elementos són solamente visibles en la versión "Desktop".
-.listSongs
-	list-style none
-	& .action
-		color gris_claro
-	& .actions
-		float right
-	& .item
-		padding 1em 0
-		border-bottom 1px solid gris_claro
+.song
+	display inline-block
+	margin-bottom 1.2rem
+	margin-right 1rem
+	&:nth-child(even)
+		margin-right 0
+.titlePag
+	font-size 1.2rem
+	margin 0
+	text-align center
 
 @media screen and (min-width:480px)
 	body
 		background #F3F3F3
+	.cabecera-desktop
+		display none
 	.image
 		img
 			/*
@@ -182,6 +189,8 @@ ul
 	.playing
 		&.medium
 			width auto
+	.playlist
+		display none
 	.song
 		margin-right 0.8rem
 		&:nth-child(even)
@@ -197,6 +206,7 @@ ul
 		& .titlePag
 			display none
 	.cabecera-desktop
+		display block
 		height 3em
 		line-height 1rem
 		margin 0 auto
@@ -209,7 +219,9 @@ ul
 		width 122px
 	.menu
 		background gris_mas_claro
+		border-top 1px gris_claro solid
 		display block
+		height 4.5em
 		line-height 1rem
 		overflow hidden
 		.item
@@ -229,8 +241,11 @@ ul
 			width 1000px
 	.music
 		float left
+		//padding 0 3.4em
 		//width 23.4em
 		width 32.5em
+		.description
+			display none
 	.playing
 		&.large
 			margin 0 auto
@@ -238,9 +253,18 @@ ul
 			width 62.5em
 	.playlist
 		border-left 1px solid gris_claro
+		display block
 		float right
 		padding 0 2em
 		width 22em
+		.name
+			//padding 1em 0
+			font-size 26px
+		.author
+			font-size 20px
+			padding 0 0 1em 0
+		.action
+			font-size 14px
 	.search
 		margin-right 2.2em
 		position relative
