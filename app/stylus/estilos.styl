@@ -42,9 +42,6 @@ ul
 	line-height inherit
 .cabecera-desktop
 	display none
-.container
-	padding 1.4rem
-	text-align center
 .close-icon
 	color gris_claro
 	font-weight bold
@@ -52,6 +49,9 @@ ul
 	position absolute
 	right .5em
 	top .7em
+.container
+	padding 1.4rem
+	text-align center
 .description
 	border-bottom 2px solid gris_claro
 	padding 0.5em 0 1em 0
@@ -70,6 +70,27 @@ ul
 	border-radius 5px
 	height 2.5em
 	padding 0 1em 0 2em
+//Estas propiedades, afectan a los elementos con la clase ".action" dentro de los elementos con la clase ".listSongs". Estos elementos són solamente visibles en la versión "Desktop".
+.listSongs
+	list-style none
+	& .action
+		color gris_claro
+	& .actions
+		float right
+	& .item
+		//color gris_claro
+		border-bottom 1px solid gris_claro
+		padding 1em 0
+		position relative
+		width 100%
+		.circle
+			background gris_oscuro
+			border-radius 50%
+			height 10px
+			position absolute
+			right 0
+			top -3px
+			width 10px
 .menu
 	display none
 .music .actions
@@ -128,27 +149,6 @@ ul
 		background rojo
 		border-radius 5px
 		height 3px
-//Estas propiedades, afectan a los elementos con la clase ".action" dentro de los elementos con la clase ".listSongs". Estos elementos són solamente visibles en la versión "Desktop".
-.listSongs
-	list-style none
-	& .action
-		color gris_claro
-	& .actions
-		float right
-	& .item
-		//color gris_claro
-		border-bottom 1px solid gris_claro
-		padding 1em 0
-		position relative
-		width 100%
-		.circle
-			background gris_oscuro
-			border-radius 50%
-			height 10px
-			position absolute
-			right 0
-			top -3px
-			width 10px
 .progress_description_playing
 	padding 1em
 .search-icon
