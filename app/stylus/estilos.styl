@@ -25,7 +25,7 @@ ul
 .actions-play
 	padding 1em 0
 	text-align center
-	& .action
+	.action
 		color gris_oscuro
 		font-size 1rem
 		margin 1em
@@ -42,6 +42,16 @@ ul
 	line-height inherit
 .cabecera-desktop
 	display none
+	height 3em
+	line-height 1rem
+	margin 0 auto
+	overflow hidden
+	padding 1em 0
+	width 1000px
+	.image
+		display inline-block
+		float left
+		width 122px
 .close-icon
 	color gris_claro
 	font-weight bold
@@ -56,10 +66,10 @@ ul
 	border-bottom 2px solid gris_claro
 	padding 0.5em 0 1em 0
 	text-align center
-	& .author
+	.author
 		font-size 0.9rem
 		margin-top 0.3em
-	& .name
+	.name
 		font-size 1.2rem
 .form-search
 	position relative
@@ -73,24 +83,16 @@ ul
 //Estas propiedades, afectan a los elementos con la clase ".action" dentro de los elementos con la clase ".listSongs". Estos elementos són solamente visibles en la versión "Desktop".
 .listSongs
 	list-style none
-	& .action
+	.action
 		color gris_claro
-	& .actions
+	.actions
 		float right
-	& .item
+	.item
 		//color gris_claro
 		border-bottom 1px solid gris_claro
 		padding 1em 0
 		position relative
 		width 100%
-		.circle
-			background gris_oscuro
-			border-radius 50%
-			height 10px
-			position absolute
-			right 0
-			top -3px
-			width 10px
 .menu
 	display none
 .music .actions
@@ -113,7 +115,7 @@ ul
 		Se puede utilizar en todos los casos.
 		Simplemente corresponde al contenido del elemento padre identado.
 	 */
-	& .action
+	.action
 		color white
 		margin-right .2em
 		&:last-child
@@ -126,7 +128,19 @@ ul
 		margin 0 auto
 		width 20rem
 .playlist
+	border-left 1px solid gris_claro
 	display none
+	float right
+	padding 0 2em
+	width 22em
+	.name
+		//padding 1em 0
+		font-size 26px
+	.author
+		font-size 20px
+		padding 0 0 1em 0
+	.action
+		font-size 14px
 .progress
 	margin 1em 0
 	position relative
@@ -149,6 +163,16 @@ ul
 		background rojo
 		border-radius 5px
 		height 3px
+		position relative
+		width 75%
+		.circle
+			background gris_oscuro
+			border-radius 50%
+			height 10px
+			position absolute
+			right 0
+			top -3px
+			width 10px
 .progress_description_playing
 	padding 1em
 .search-icon
@@ -156,6 +180,32 @@ ul
 	left .5em
 	position absolute
 	top .9em
+.search
+	margin-right 2.2em
+	position relative
+.search
+.user
+	display inline-block
+	float right
+	.avatar
+		float left
+		height 38px
+		width 38px
+		& img
+			border-radius 50%
+	.name-avatar
+		color gris_claro
+		float left
+		margin-left .5em
+		position relative
+		top 10px
+		&:after
+			border-left 6px solid transparent
+			border-top 6px solid gris_claro
+			border-right 6px solid transparent
+			content ""
+			display inline-block
+			margin-left .4em
 .song
 	display inline-block
 	margin-bottom 1.2rem
@@ -202,21 +252,11 @@ ul
 	header
 		background white
 		height auto
-		& .button_menu
-		& .titlePag
+		.button_menu
+		.titlePag
 			display none
 	.cabecera-desktop
 		display block
-		height 3em
-		line-height 1rem
-		margin 0 auto
-		overflow hidden
-		padding 1em 0
-		width 1000px
-	.cabecera-desktop .image
-		display inline-block
-		float left
-		width 122px
 	.menu
 		background gris_mas_claro
 		border-top 1px gris_claro solid
@@ -252,42 +292,5 @@ ul
 			overflow hidden
 			width 62.5em
 	.playlist
-		border-left 1px solid gris_claro
 		display block
-		float right
-		padding 0 2em
-		width 22em
-		.name
-			//padding 1em 0
-			font-size 26px
-		.author
-			font-size 20px
-			padding 0 0 1em 0
-		.action
-			font-size 14px
-	.search
-		margin-right 2.2em
-		position relative
-	.search
-	.user
-		display inline-block
-		float right
-		& .avatar
-			float left
-			height 38px
-			width 38px
-			& img
-				border-radius 50%
-		& .name-avatar
-			color gris_claro
-			float left
-			margin-left .5em
-			position relative
-			top 10px
-			&:after
-				border-left 6px solid transparent
-				border-top 6px solid gris_claro
-				border-right 6px solid transparent
-				content ""
-				display inline-block
-				margin-left .4em
+	
