@@ -1,3 +1,5 @@
+//Para utilizar una libreria, se ha de importar (abajo, se importa la libreria "nib").
+@import "nib"
 @import "normalize.styl"
 @import "fonts.styl"
 
@@ -6,6 +8,18 @@ gris_mas_claro = #F0F0F0
 gris_oscuro = #333333
 rojo = #CC2F6F
 
+/*
+	Este es uno de los sistemas para hacer animaciones en CSS.
+		Se pone "@keyframes", un espacio y nombre de la animación (puesto en la clase pertinente (esta pertenece a la clase ".state")).
+ */
+@keyframes state-progress
+	//Aquí, ´tengo 2 estados (inicio(from) y fin(to)).
+	from
+		width 0%
+		//Aquí podemos poner más propiedades.
+	to
+		width 100%
+		//Aquí podemos poner más propiedades.
 a
 	text-decoration none
 body
@@ -165,6 +179,13 @@ ul
 		height 3px
 		position relative
 		width 75%
+		/*
+			Esta propiedad, con los valores que tiene en el siguiente ejemplo, significa que el elemento con la clase ".state",
+				tendrá una animación de 1 segundo con el nombre "state-progress" y se ejecutará infinitamente(será un bucle).
+				También, con el valor "linear", indicamos que la aceleración sea lineal (osea, siempre con la misma velocidad y no al principio rapido y luego rápido(como es predeterminadamente.))
+			Ponemos "250s"(s=segundos) porquè la canción de ejemplo dura 250 segundos (4:10 mín.).
+		 */
+		animation 250s state-progress infinite linear
 		.circle
 			background gris_oscuro
 			border-radius 50%
