@@ -6,6 +6,7 @@ Sfotipy = {};
 
 //Creamos un modelo (Model) de Backbone, extendiendo del objeto "Model" de Backbone.
 Sfotipy.Song = Backbone.Model.extend({});
+
 /*
 	Creamos la colección "Songs". Una colección de Backbone es un conjunto
 		de modelos tipo "Song".
@@ -18,7 +19,8 @@ Sfotipy.Songs = Backbone.Collection.extend({
 			a partir de esa clase.)
 	 */
 	model: Sfotipy.Song
-})
+});
+
 //Creamos una vista (View) de Backbone, extendiendo del objeto "View" de Backbone.
 Sfotipy.SongView = Backbone.View.extend({
 	/*
@@ -35,6 +37,16 @@ Sfotipy.SongView = Backbone.View.extend({
 	className: 'item',
 	template: Handlebars.compile($("#playlist_songs-template").html()),
 
+	/*
+		La función "initialize" se ejecuta al crear una instancia de la clase "SongView".
+			Es como el constructor de la clase "SongView".
+		Lo que hace es escuchar al modelo perteneciente a "SongView"(this.model), escuchar el
+			evento "change" y ejecutar la función "render"(this.render) en el scope "this". Esto
+			del scope es muy importante porque si no se ejecutaría en el scope del window, en este caso.
+	 */
+	initialize: function(){
+		this.listenTo(this.model, 'change', this.render, this);
+	},
 	/*
 		La función "render" se ejecutará cada vez que se muestre esta vista
 			en pantalla. Es una función predeterminada de Backbone que se
@@ -54,5 +66,36 @@ Sfotipy.SongView = Backbone.View.extend({
 		alert(this.model.get('name'));
 	}
 });
+
+//Creamos un enrutador (clase "Router") para definir unas rutas en la app Backbone.
+Sfotipy.Rutas = Backbone.Router.extend({
+	/*
+		Definimos las diferentes rutas y los métodos que se ejecutarán.
+		Los nombres procedidos por ":", són los argumentos de la función que se ejecutará.
+	 */
+	routes: {
+		"": "index",
+		"album/:name": "album",
+		"profile/:username": "profile"
+	},
+
+	index: function(){
+		console.log("¡Estoy en el índex!");
+	},
+	//El argumento "nombreAlbum" de la función, es el texto de la ruta ":name".
+	album: function(nombreAlbum){
+		console.log("¡Estoy en la vista del álbum \""+nombreAlbum+"\"!");
+	},
+	//El argumento "user" de la función, es el texto de la ruta ":username".
+	profile: function(user){
+		console.log("¡Estoy en la vista del usuario \""+user+"\"!");
+	}
+});
+
+//Creamos una instáncia de la clase "Rutas" (instanciamos el enrutador).
+Sfotipy.app = new Sfotipy.Rutas();
+//Activamos el "history" de Backbone para que podamos navegar por la aplicación.
+Backbone.history.start();
+
 //Dejamos el objeto "Sfotipy" en el contexto global de Javascript.
 window.Sfotipy = Sfotipy;
