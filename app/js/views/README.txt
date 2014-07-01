@@ -1,0 +1,1 @@
+Las vistas que están en sigular corresponden a elementos únicos y las vistas que están en plural (además de la vista "list.js"), corresponden a vistas de colección.
