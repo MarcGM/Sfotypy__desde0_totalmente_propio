@@ -17,7 +17,7 @@ Sfotipy.Views.Song = Backbone.View.extend({
 		-"share": Se llamará al hacer click al elemento con forma de compartir y
 			llamará al método "share" de esta vista.
 
-		Síntaxis:
+		Síntaxis (si no utilizamos ningún "selector", el método se ejecutará si se hace 'click'(o lo que se sea) en todo el elemento):
 			'evento selector': 'metodo_a_llamar'
 	 */
 	events: {
@@ -35,7 +35,7 @@ Sfotipy.Views.Song = Backbone.View.extend({
 			del scope es muy importante porque si no se ejecutaría en el scope del window, en este caso.
 	 */
 	initialize: function(){
-		this.listenTo(this.model, "change", this.render, this)
+		this.listenTo(this.model, "change", this.render, this);
 	},
 	render: function(){
 		var song = this.model.toJSON();
