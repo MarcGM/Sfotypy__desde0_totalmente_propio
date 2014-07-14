@@ -42,5 +42,15 @@ Sfotipy.Views.Song = Backbone.View.extend({
 		var html = this.template(song);
 		this.$el.html(html);
 		return this;
+	},
+	select: function(){
+		Sfotipy.app.player.model.set(this.model.toJSON());
+		return false;
+	},
+	love: function(){
+
+	},
+	share: function(){
+		
 	}
 });

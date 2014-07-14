@@ -1,4 +1,4 @@
-//Són los "namesspaces". Uno para Modelos, otro para Vistas, otro para Colecciones i otro para Rutas.
+//Són los "namesspaces". Uno para Modelos, otro para Vistas, otro para Colecciones y otro para Rutas.
 var Sfotipy = {
 	Models: {},
 	Views: {},
